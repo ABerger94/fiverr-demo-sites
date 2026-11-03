@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patriot Plumbing &amp; HVAC — Dundalk, MD · 24/7 Emergency Service</title>
+<meta name="description" content="Patriot Plumbing & HVAC: licensed plumbers and HVAC techs serving Dundalk and Baltimore County. Upfront flat-rate pricing, 24/7 emergency service. Request service online.">
+<style>
+  :root{
+    --blue:#0b3d91; --blue2:#0f4fae; --sky:#e8f1fd; --red:#c0392b;
+    --ink:#16222e; --muted:#5a6b7a; --line:#dde5ee; --paper:#ffffff;
+    --radius:14px; --shadow:0 10px 28px rgba(11,61,145,.13);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.15;color:var(--blue)}
+
+  .emergency{background:var(--red);color:#fff;text-align:center;font-weight:700;font-size:.92rem;padding:9px 14px}
+  .emergency a{color:#fff}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+  .logo{font-weight:900;font-size:1.12rem;color:var(--blue);text-decoration:none;letter-spacing:.01em}
+  .logo span{color:var(--red)}
+  nav{display:none;gap:24px;font-size:.95rem;font-weight:600}
+  nav a{text-decoration:none;color:var(--ink)}
+  nav a:hover{color:var(--blue)}
+  .btn{display:inline-block;font-weight:800;text-decoration:none;border-radius:10px;padding:12px 20px;font-size:.95rem;cursor:pointer;border:0;transition:transform .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 6px 16px rgba(192,57,43,.3)}
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-white{background:#fff;color:var(--blue)}
+  .btn-outline{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+  @media(min-width:840px){nav{display:flex}}
+
+  .hero{position:relative;color:#fff}
+  .hero img{width:100%;height:min(72vh,540px);object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,35,80,.82) 0%,rgba(7,35,80,.45) 55%,rgba(7,35,80,.08) 100%)}
+  .hero-text{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;max-width:1100px;margin:0 auto;left:0;right:0;padding:0 20px}
+  .hero-text h1{color:#fff;font-size:clamp(2rem,5.6vw,3.3rem);max-width:15ch}
+  .hero-text p{max-width:46ch;margin:14px 0 22px;font-size:1.05rem;opacity:.96}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:.82rem;font-weight:700}
+
+  .trust{background:var(--sky);border-bottom:1px solid var(--line)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding-top:20px;padding-bottom:20px;text-align:center}
+  @media(min-width:820px){.trust .wrap{grid-template-columns:repeat(4,1fr)}}
+  .trust b{display:block;font-size:1.2rem;color:var(--blue)}
+  .trust span{font-size:.85rem;color:var(--muted)}
+
+  section{padding:60px 0}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.74rem;color:var(--red);font-weight:800}
+  h2{font-size:clamp(1.55rem,4vw,2.2rem);margin:8px 0 12px}
+  .lede{color:var(--muted);max-width:64ch}
+
+  .svc-grid{display:grid;gap:16px;margin-top:28px}
+  @media(min-width:700px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:1000px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+  .svc{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;box-shadow:var(--shadow)}
+  .svc .ic{font-size:1.6rem}
+  .svc h3{font-size:1.05rem;margin:10px 0 6px}
+  .svc p{font-size:.93rem;color:var(--muted)}
+  .svc .from{margin-top:12px;font-weight:800;color:var(--blue);font-size:.92rem}
+
+  .steps{display:grid;gap:16px;margin-top:28px}
+  @media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{background:var(--sky);border-radius:var(--radius);padding:22px}
+  .step .n{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}
+  .step h3{font-size:1.02rem;margin:12px 0 6px}
+  .step p{font-size:.93rem;color:var(--muted)}
+
+  .cards{display:grid;gap:16px;margin-top:28px}
+  @media(min-width:820px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;box-shadow:var(--shadow)}
+  .stars{color:#e8a33d;letter-spacing:.14em}
+  .card p{margin:10px 0 12px;font-size:.96rem}
+  .card .who{font-size:.85rem;color:var(--muted);font-weight:700}
+
+  #book{background:var(--blue);color:#fff}
+  #book h2{color:#fff}
+  #book .lede{color:#cfdefa}
+  .split{display:grid;gap:32px;margin-top:8px}
+  @media(min-width:900px){.split{grid-template-columns:1fr 1.15fr}}
+  .areas{columns:2;font-size:.97rem;line-height:2}
+  form{background:#fff;color:var(--ink);border-radius:var(--radius);padding:24px;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+  label{display:block;font-size:.85rem;font-weight:700;margin:14px 0 6px;color:var(--blue)}
+  label:first-of-type{margin-top:0}
+  input,select,textarea{width:100%;font-size:1rem;padding:11px 12px;border:1.5px solid #ccd6e2;border-radius:10px;background:#fbfcfe;font-family:inherit}
+  input:focus,select:focus,textarea:focus{outline:2px solid #7fb0f5;border-color:var(--blue2)}
+  .form-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn{width:100%;margin-top:20px;text-align:center}
+  .confirm{display:none;margin-top:16px;background:#eef7ee;border:1px solid #bcd8bc;color:#255c25;border-radius:10px;padding:14px 16px;font-size:.95rem}
+  .fineprint{font-size:.8rem;color:var(--muted);margin-top:12px}
+
+  footer{background:#0a2c5f;color:#c3d4ee;padding:42px 0 28px}
+  footer .cols{display:grid;gap:24px}
+  @media(min-width:820px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+  footer h3{color:#fff;font-size:1rem;margin-bottom:10px}
+  footer a{color:#9dc0f5;text-decoration:none}
+  .demo-note{margin-top:28px;border-top:1px solid rgba(255,255,255,.18);padding-top:14px;font-size:.8rem;opacity:.8}
+</style>
+</head>
+<body>
+
+<div class="emergency">🚨 Burst pipe or no heat? We answer 24/7 — <a href="tel:+14105550137">call (410) 555-0137</a></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#">PATRIOT <span>PLUMBING &amp; HVAC</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#book">Service Area</a>
+    </nav>
+    <a class="btn btn-red" href="#book">Request Service</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="hero.jpg" alt="Patriot Plumbing & HVAC technician with a service van in front of a Maryland home">
+  <div class="hero-text">
+    <h1>Plumbing or HVAC problem? Fixed today, priced before we start.</h1>
+    <p>Licensed local techs serving Dundalk and Baltimore County. Flat-rate quotes in writing, shoe covers on, and we clean up before we leave.</p>
+    <div class="hero-cta">
+      <a class="btn btn-red" href="#book">Request Service Online</a>
+      <a class="btn btn-white" href="tel:+14105550137">Call (410) 555-0137</a>
+    </div>
+    <div class="badges">
+      <span class="badge">Licensed &amp; Insured</span>
+      <span class="badge">Same-Day Service</span>
+      <span class="badge">Upfront Flat-Rate Pricing</span>
+      <span class="badge">2-Year Workmanship Warranty</span>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>4.9 ★</b><span>860+ Google reviews</span></div>
+    <div><b>Since 2009</b><span>Family owned, Dundalk MD</span></div>
+    <div><b>60–90 min</b><span>Emergency response window</span></div>
+    <div><b>$0</b><span>Diagnostic fee with any repair</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What we fix</div>
+    <h2>Services &amp; flat-rate pricing</h2>
+    <p class="lede">No hourly meters running. You approve the exact price before any work begins — if we find something else, you get a new quote first, never a surprise on the invoice.</p>
+    <div class="svc-grid">
+      <div class="svc"><div class="ic">🚿</div><h3>Drain Cleaning</h3><p>Clogs, slow drains, and sewer line camera inspections. We find the cause, not just the symptom.</p><div class="from">From $129</div></div>
+      <div class="svc"><div class="ic">🔥</div><h3>Water Heaters</h3><p>Repair and replacement, tank and tankless. Same-day installs on most in-stock units.</p><div class="from">Installs from $1,450</div></div>
+      <div class="svc"><div class="ic">💧</div><h3>Leak Detection &amp; Repair</h3><p>Slab leaks, pinhole leaks, and re-pipes. Non-invasive detection first — we don't guess with a jackhammer.</p><div class="from">From $189</div></div>
+      <div class="svc"><div class="ic">❄️</div><h3>AC Repair</h3><p>No-cool calls diagnosed fast. Capacitors, motors, refrigerant — most repairs done on the first visit.</p><div class="from">From $149</div></div>
+      <div class="svc"><div class="ic">🌡️</div><h3>Furnace &amp; Heat Pumps</h3><p>Repairs, tune-ups, and full system replacements with financing options for qualified homeowners.</p><div class="from">Tune-ups $89</div></div>
+      <div class="svc"><div class="ic">🚨</div><h3>24/7 Emergency</h3><p>Burst pipes, sewer backups, no heat in January. A real person answers, and a tech gets dispatched.</p><div class="from">No overtime markup</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:#f6f9fd">
+  <div class="wrap">
+    <div class="eyebrow">No surprises</div>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>Book in 60 seconds</h3><p>Use the form below or call. Tell us the problem and pick a window — morning, afternoon, or emergency now.</p></div>
+      <div class="step"><span class="n">2</span><h3>Approve a flat price</h3><p>Your tech diagnoses on site and quotes the full job in writing. Work starts only when you say yes.</p></div>
+      <div class="step"><span class="n">3</span><h3>Fixed &amp; guaranteed</h3><p>We complete the repair, test everything, clean up, and back the workmanship for two full years.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="eyebrow">Neighbors talking</div>
+    <h2>Reviews from Baltimore County</h2>
+    <div class="cards">
+      <div class="card"><div class="stars">★★★★★</div><p>"Water heater died on a Sunday. Tech was here by noon, price matched the quote to the dollar, and the old unit was hauled away. Couldn't ask for more."</p><div class="who">— Karen D., Essex</div></div>
+      <div class="card"><div class="stars">★★★★★</div><p>"Three other companies told me I needed a full sewer replacement. Patriot scoped it, showed me the video, and fixed the actual problem for a tenth of that."</p><div class="who">— James R., Dundalk</div></div>
+      <div class="card"><div class="stars">★★★★★</div><p>"Booked online at 7 AM, furnace running again by lunch. The tech explained everything and never once tried to upsell me a new system."</p><div class="who">— Angela M., Rosedale</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#ffb3ab">Book a visit</div>
+    <h2>Request service</h2>
+    <div class="split">
+      <div>
+        <p class="lede">We serve Baltimore County and the surrounding area:</p>
+        <div class="areas" style="margin-top:14px">
+          Dundalk · Essex<br>
+          Rosedale · Middle River<br>
+          Parkville · Towson<br>
+          Perry Hall · White Marsh<br>
+          Pasadena · Glen Burnie<br>
+          Baltimore City · Catonsville
+        </div>
+        <p style="margin-top:20px;font-size:.95rem">Prefer to talk? <a href="tel:+14105550137" style="color:#fff;font-weight:800">(410) 555-0137</a><br>Mon–Sat 7 AM – 7 PM · Emergencies 24/7</p>
+      </div>
+      <form id="svcForm" novalidate>
+        <label for="sname">Name</label>
+        <input id="sname" type="text" placeholder="Your name" required>
+        <label for="sphone">Phone</label>
+        <input id="sphone" type="tel" placeholder="(410) 555-0100" required>
+        <div class="form-2">
+          <div>
+            <label for="sservice">Service needed</label>
+            <select id="sservice">
+              <option>Drain cleaning</option><option>Water heater</option>
+              <option>Leak / pipe repair</option><option>AC repair</option>
+              <option>Furnace / heat pump</option><option>Emergency</option><option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="swhen">When</label>
+            <select id="swhen">
+              <option>As soon as possible</option><option>Today — morning</option>
+              <option>Today — afternoon</option><option>Tomorrow</option><option>This week</option>
+            </select>
+          </div>
+        </div>
+        <label for="sdesc">Describe the problem</label>
+        <textarea id="sdesc" rows="3" placeholder="e.g. Kitchen sink drains slowly and gurgles; started last week."></textarea>
+        <button class="btn btn-red" type="submit">Request My Visit</button>
+        <div class="confirm" id="svcConfirm"></div>
+        <p class="fineprint">No spam, ever. We only use your number to schedule this visit.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Patriot Plumbing &amp; HVAC</h3>
+        <p>Licensed &amp; insured plumbing and HVAC contractor based in Dundalk, MD. MD Master Plumber Lic. #88213 · HVAC Lic. #44190 (fictional, for demo).</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>2810 North Point Rd<br>Dundalk, MD 21222<br><a href="tel:+14105550137">(410) 555-0137</a></p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <p><a href="#services">Services</a><br><a href="#reviews">Reviews</a><br><a href="#book">Request service</a></p>
+      </div>
+    </div>
+    <p class="demo-note">Demo website built as a portfolio sample for a Fiverr web-design gig. Patriot Plumbing &amp; HVAC is a fictional business; services, prices, licenses, and reviews are illustrative.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('svcForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('sname').value.trim();
+    const phone = document.getElementById('sphone').value.trim();
+    const svc = document.getElementById('sservice').value;
+    const when = document.getElementById('swhen').value;
+    const box = document.getElementById('svcConfirm');
+    box.style.display = 'block';
+    if(!name || !phone){
+      box.textContent = 'Please add your name and phone number so we can reach you about the visit.';
+      return;
+    }
+    box.textContent = `Thanks, ${name} — your ${svc.toLowerCase()} request (${when.toLowerCase()}) is in. Dispatch will call ${phone} shortly to confirm your window. (Demo form — no real request is sent.)`;
+    this.reset();
+  });
+</script>
+</body>
+</html>
