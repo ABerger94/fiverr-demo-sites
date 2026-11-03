@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harborlight Kitchen — Chesapeake Seafood · Baltimore, MD</title>
+<meta name="description" content="Harborlight Kitchen: Chesapeake seafood, steamed blue crabs, and waterfront dining in Baltimore, MD. View the menu and reserve a table.">
+<style>
+  :root{
+    --navy:#0e2a38; --navy2:#12394d; --cream:#f7f2e9; --paper:#fffdf8;
+    --gold:#c8963e; --gold2:#e3b566; --ink:#1c2b33; --muted:#5b6d76;
+    --radius:14px; --shadow:0 10px 30px rgba(14,42,56,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  h1,h2,h3,.sans{font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(14,42,56,.96);color:var(--cream);backdrop-filter:blur(6px)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+  .logo{font-family:'Segoe UI',system-ui,sans-serif;font-weight:800;letter-spacing:.04em;font-size:1.15rem;text-decoration:none}
+  .logo span{color:var(--gold2)}
+  nav{display:none;gap:26px;font-family:'Segoe UI',system-ui,sans-serif;font-size:.95rem}
+  nav a{text-decoration:none;opacity:.92}
+  nav a:hover{opacity:1;color:var(--gold2)}
+  .bar .actions{display:flex;gap:10px}
+  .btn{display:inline-block;font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;text-decoration:none;border-radius:999px;padding:11px 20px;font-size:.95rem;transition:transform .15s ease, box-shadow .15s ease;cursor:pointer;border:0}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{background:var(--gold);color:#fff;box-shadow:0 6px 16px rgba(200,150,62,.35)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(247,242,233,.55)}
+  .btn-navy{background:var(--navy);color:var(--cream)}
+  @media(min-width:820px){nav{display:flex}}
+
+  /* hero */
+  .hero{position:relative;color:#fff}
+  .hero img{width:100%;height:min(74vh,560px);object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,28,38,.28),rgba(10,28,38,.78))}
+  .hero-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 44px;max-width:1100px;margin:0 auto;left:0;right:0;z-index:2}
+  .hero-text .kicker{font-family:'Segoe UI',system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--gold2);font-weight:700}
+  .hero-text h1{font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.08;margin:10px 0 12px;max-width:16ch}
+  .hero-text p{max-width:52ch;font-size:1.05rem;opacity:.95}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .hero-meta{margin-top:16px;font-family:'Segoe UI',system-ui,sans-serif;font-size:.9rem;opacity:.9}
+
+  /* strip */
+  .strip{background:var(--cream);border-bottom:1px solid #e7ddc9}
+  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:20px;padding-bottom:20px;text-align:center}
+  .strip b{display:block;font-family:'Segoe UI',system-ui,sans-serif;font-size:1.25rem;color:var(--navy)}
+  .strip span{font-size:.85rem;color:var(--muted);font-family:'Segoe UI',system-ui,sans-serif}
+  @media(max-width:640px){.strip .wrap{grid-template-columns:1fr 1fr 1fr;gap:8px}.strip b{font-size:1rem}}
+
+  section{padding:64px 0}
+  .eyebrow{font-family:'Segoe UI',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;color:var(--gold);font-weight:800}
+  h2{font-size:clamp(1.6rem,4vw,2.3rem);color:var(--navy);margin:8px 0 14px;line-height:1.15}
+  .lede{color:var(--muted);max-width:62ch}
+
+  /* menu */
+  #menu{background:var(--navy);color:var(--cream)}
+  #menu h2{color:var(--cream)}
+  #menu .lede{color:#c8d4da}
+  .tabs{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+  .tab{font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;border-radius:999px;padding:9px 18px;border:1.5px solid rgba(247,242,233,.35);background:transparent;color:var(--cream);cursor:pointer;font-size:.92rem}
+  .tab.active{background:var(--gold);border-color:var(--gold);color:#fff}
+  .menu-grid{display:grid;gap:18px}
+  @media(min-width:760px){.menu-grid{grid-template-columns:1fr 1fr}}
+  .dish{background:var(--navy2);border:1px solid rgba(247,242,233,.08);border-radius:var(--radius);padding:18px 20px}
+  .dish .row{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+  .dish h3{font-size:1.05rem;color:#fff}
+  .dish .price{font-family:'Segoe UI',system-ui,sans-serif;font-weight:800;color:var(--gold2);white-space:nowrap}
+  .dish p{font-size:.93rem;color:#c8d4da;margin-top:5px}
+  .tag{display:inline-block;font-family:'Segoe UI',system-ui,sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:rgba(200,150,62,.18);color:var(--gold2);border-radius:6px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+
+  /* reviews */
+  .cards{display:grid;gap:18px;margin-top:28px}
+  @media(min-width:820px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:#fff;border:1px solid #eee3cf;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .stars{color:var(--gold);letter-spacing:.15em;font-size:.95rem}
+  .card p{margin:10px 0 12px;font-size:.97rem}
+  .card .who{font-family:'Segoe UI',system-ui,sans-serif;font-size:.85rem;color:var(--muted);font-weight:700}
+
+  /* visit + reserve */
+  .split{display:grid;gap:34px}
+  @media(min-width:880px){.split{grid-template-columns:1fr 1fr}}
+  .hours{font-family:'Segoe UI',system-ui,sans-serif}
+  .hours li{list-style:none;display:flex;justify-content:space-between;border-bottom:1px dashed #ddd2ba;padding:9px 0;font-size:.97rem}
+  form{background:#fff;border:1px solid #eee3cf;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  label{display:block;font-family:'Segoe UI',system-ui,sans-serif;font-size:.85rem;font-weight:700;margin:14px 0 6px;color:var(--navy)}
+  label:first-of-type{margin-top:0}
+  input,select,textarea{width:100%;font-family:'Segoe UI',system-ui,sans-serif;font-size:1rem;padding:11px 12px;border:1.5px solid #d9cfb8;border-radius:10px;background:var(--paper)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold2);border-color:var(--gold)}
+  .form-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn{width:100%;margin-top:20px;text-align:center}
+  .confirm{display:none;margin-top:16px;background:#eef7ee;border:1px solid #bcd8bc;color:#255c25;border-radius:10px;padding:14px 16px;font-family:'Segoe UI',system-ui,sans-serif;font-size:.95rem}
+  .fineprint{font-size:.8rem;color:var(--muted);margin-top:12px;font-family:'Segoe UI',system-ui,sans-serif}
+
+  footer{background:var(--navy);color:#c8d4da;padding:44px 0 30px;font-family:'Segoe UI',system-ui,sans-serif}
+  footer .cols{display:grid;gap:26px}
+  @media(min-width:820px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+  footer h3{color:#fff;font-size:1rem;margin-bottom:10px}
+  footer a{color:var(--gold2);text-decoration:none}
+  .demo-note{margin-top:30px;border-top:1px solid rgba(247,242,233,.15);padding-top:16px;font-size:.8rem;opacity:.75}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#">HARBORLIGHT <span>KITCHEN</span></a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Hours &amp; Location</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-ghost" href="tel:+14105550194">(410) 555-0194</a>
+      <a class="btn btn-gold" href="#reserve">Reserve a Table</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="hero.jpg" alt="Steamed Chesapeake blue crabs served at Harborlight Kitchen">
+  <div class="hero-text">
+    <div class="kicker">Chesapeake Seafood · Baltimore, MD</div>
+    <h1>Blue crabs, cold beer, and a table by the water.</h1>
+    <p>Family-owned since 1998. Steamed crabs by the dozen, crab cakes with zero filler, and the harbor at golden hour — five minutes from downtown.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#menu">See the Menu</a>
+      <a class="btn btn-ghost" href="#reserve">Book a Table</a>
+    </div>
+    <div class="hero-meta">Open today until 10 PM · Kitchen closes 9:30 PM</div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div><b>4.8 ★</b><span>1,200+ Google reviews</span></div>
+    <div><b>Since 1998</b><span>Family owned &amp; operated</span></div>
+    <div><b>By the dozen</b><span>Crabs steamed to order</span></div>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="eyebrow">From the steam pot</div>
+    <h2>The menu</h2>
+    <p class="lede">Everything is made to order. Crab prices follow the dock — ask your server what's running today.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="starters">Starters</button>
+      <button class="tab" data-tab="mains">Mains</button>
+      <button class="tab" data-tab="crabs">Crabs &amp; Platters</button>
+      <button class="tab" data-tab="sweets">Desserts &amp; Drinks</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="eyebrow">Word of mouth</div>
+    <h2>What Baltimore says</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>"Best crab cake I've had outside my grandmother's kitchen — and I'm not supposed to say that out loud. All lump, no filler."</p>
+        <div class="who">— Denise W., Canton</div>
+      </div>
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>"Booked online in about thirty seconds, table was ready when we walked in. The steamed crabs were heavy and hot. This is our Friday spot now."</p>
+        <div class="who">— Marcus T., Dundalk</div>
+      </div>
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>"Took my parents here when they flew in. Sunset over the water, hush puppies on the table in five minutes. They talk about it more than the Inner Harbor."</p>
+        <div class="who">— Priya S., Towson</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="background:var(--cream)">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Visit us</div>
+      <h2>Hours &amp; location</h2>
+      <p class="lede" style="margin-bottom:18px">1420 Harbor Point Rd, Baltimore, MD 21224<br>Free parking in the lot out front. Water taxi stop 4 is a two-minute walk.</p>
+      <ul class="hours">
+        <li><span>Monday – Thursday</span><b>11 AM – 9 PM</b></li>
+        <li><span>Friday – Saturday</span><b>11 AM – 10 PM</b></li>
+        <li><span>Sunday</span><b>12 PM – 8 PM</b></li>
+      </ul>
+      <p class="fineprint">Large party or crab feast for 10+? Call <a href="tel:+14105550194">(410) 555-0194</a> and we'll set the long table.</p>
+    </div>
+
+    <div id="reserve">
+      <div class="eyebrow">Save your seat</div>
+      <h2>Reserve a table</h2>
+      <form id="resForm" novalidate>
+        <label for="rname">Name</label>
+        <input id="rname" name="name" type="text" placeholder="Your name" required>
+        <label for="rphone">Phone</label>
+        <input id="rphone" name="phone" type="tel" placeholder="(410) 555-0100" required>
+        <div class="form-2">
+          <div>
+            <label for="rdate">Date</label>
+            <input id="rdate" name="date" type="date" required>
+          </div>
+          <div>
+            <label for="rsize">Party size</label>
+            <select id="rsize" name="size">
+              <option>2 people</option><option>3 people</option><option>4 people</option>
+              <option>5 people</option><option>6 people</option><option>7+ people</option>
+            </select>
+          </div>
+        </div>
+        <label for="rnotes">Anything we should know? (optional)</label>
+        <textarea id="rnotes" name="notes" rows="2" placeholder="Anniversary, high chair, window seat…"></textarea>
+        <button class="btn btn-gold" type="submit">Request Reservation</button>
+        <div class="confirm" id="resConfirm"></div>
+        <p class="fineprint">We hold tables for 15 minutes past the reservation time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Harborlight Kitchen</h3>
+        <p>Chesapeake seafood and steamed blue crabs on the Baltimore waterfront. Family owned since 1998.</p>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <p>1420 Harbor Point Rd<br>Baltimore, MD 21224<br><a href="tel:+14105550194">(410) 555-0194</a></p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <p><a href="#menu">Menu</a><br><a href="#reserve">Reservations</a><br><a href="#visit">Hours</a></p>
+      </div>
+    </div>
+    <p class="demo-note">Demo website built as a portfolio sample for a Fiverr web-design gig. Harborlight Kitchen is a fictional business; menu, reviews, and details are illustrative.</p>
+  </div>
+</footer>
+
+<script>
+  const MENU = {
+    starters: [
+      {name:"Cream of Crab Soup", price:"$9", desc:"Sherry-kissed, loaded with lump crab. The cup everyone orders twice.", tag:"House favorite"},
+      {name:"Hush Puppies & Honey Butter", price:"$7", desc:"Cornmeal, scallion, a little jalapeño heat at the end."},
+      {name:"Old Bay Wings", price:"$13", desc:"A pound, tossed in Old Bay butter with celery and ranch."},
+      {name:"Oysters Rockefeller", price:"$16", desc:"Half dozen, spinach, herbs, and a breadcrumb crunch."}
+    ],
+    mains: [
+      {name:"Harborlight Crab Cake", price:"$24", desc:"All jumbo lump, almost no filler, broiled golden. Slaw and fries.", tag:"Zero filler"},
+      {name:"Waterman's Fried Shrimp", price:"$19", desc:"Hand-breaded, cocktail sauce with real horseradish bite."},
+      {name:"Rockfish Chesapeake", price:"$27", desc:"Pan-seared rockfish topped with crab imperial."},
+      {name:"Dockside Pasta", price:"$21", desc:"Shrimp, scallops, and crab in a garlic cream sauce over linguine."}
+    ],
+    crabs: [
+      {name:"Steamed Blue Crabs", price:"Market", desc:"By the dozen or half dozen, heavy seasoning, mallets and brown paper. Ask what's running.", tag:"Steamed to order"},
+      {name:"The Harbor Feast (serves 4)", price:"$89", desc:"A dozen crabs, a pound of shrimp, corn, potatoes, and hush puppies. The whole table, covered."},
+      {name:"Snow Crab Cluster Platter", price:"$34", desc:"Two clusters, drawn butter, Old Bay fries."},
+      {name:"Peel & Eat Shrimp — 1 lb", price:"$18", desc:"Steamed in beer and spices, cocktail sauce on the side."}
+    ],
+    sweets: [
+      {name:"Smith Island Cake", price:"$8", desc:"Maryland's official dessert — ten thin layers, chocolate fudge icing.", tag:"Maryland classic"},
+      {name:"Key Lime Pie", price:"$7", desc:"Tart, cold, graham crust. Whipped cream if you ask nice."},
+      {name:"Natty Boh & Local Drafts", price:"$4–7", desc:"Rotating Maryland taps, plus the classics in a can."},
+      {name:"Crush Bar", price:"$9", desc:"Orange and grapefruit crushes made with fresh-squeezed juice."}
+    ]
+  };
+  const grid = document.getElementById('menuGrid');
+  function render(tab){
+    grid.innerHTML = MENU[tab].map(d =>
+      `<div class="dish"><div class="row"><h3>${d.name}${d.tag ? `<span class="tag">${d.tag}</span>` : ''}</h3><span class="price">${d.price}</span></div><p>${d.desc}</p></div>`
+    ).join('');
+  }
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.tab);
+    });
+  });
+  render('starters');
+
+  document.getElementById('resForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('rname').value.trim();
+    const date = document.getElementById('rdate').value;
+    const size = document.getElementById('rsize').value;
+    const box = document.getElementById('resConfirm');
+    if(!name || !date){ box.style.display='block'; box.textContent = 'Please add your name and a date, and we\'ll take it from there.'; return; }
+    const nice = new Date(date + 'T12:00:00').toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
+    box.style.display = 'block';
+    box.textContent = `Thanks, ${name} — your request for ${size} on ${nice} is in. We'll text you within the hour to confirm. (Demo form — no real reservation is sent.)`;
+    this.reset();
+  });
+</script>
+</body>
+</html>
